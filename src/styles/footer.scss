@@ -1,0 +1,137 @@
+@font-face {
+     font-family: 'MinionPro';
+     src: url('../fonts/Minion Pro Regular.ttf');
+}
+
+.footer {
+    padding-top: 96.05px;
+    padding-bottom: 95.33px;
+
+    & > * {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .footerLeft {
+        margin-left: 15.42%;
+        margin-right: 27.6%;
+
+        @media screen and(max-width: 1105px) {
+            margin-right: 22%;
+        }
+
+         @media screen and(max-width: 1011px) {
+            margin-right: 15%;
+        }
+
+         @media screen and(max-width: 906px) {
+            margin-right: 6%;
+        }
+
+        .footerLeftLogo {
+            margin-bottom: 32.73px;
+            h2 {
+                font-family: 'MinionPro', Arial, sans-serif;
+                font-size: 14.23px;
+                color: #384a57;
+                font-weight: bold;
+                letter-spacing: 3px;
+            }
+        }
+
+        .footerLeftText {
+            width: 300.29px;
+            line-height: 2;
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 11.96px;
+            color: #a1b1bc;
+            margin-bottom: 35.57px;
+        }
+
+        .footerLeftTextBottomOne {
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 11.96px;
+            color: #3d596c;
+            margin-bottom: 8.54px;
+
+            img {
+                width: 12.67px;
+            }
+        }
+
+         .footerLeftTextBottomTwo {
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 11.96px;
+            color: #3d596c;
+        }
+    }
+
+    .footerRight {
+
+        @media screen and (max-width: 806px) {
+            margin-top: 40px;
+            display: block;
+            margin-left: 15.42%;
+        }
+        .footerRightTitle {
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 13.52px;
+            color: #444c52;
+            margin-bottom: 24.9px;
+        }
+
+        .footerRightText {
+            width: 318px;
+            line-height: 2;
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 11.96px;
+            color: #a1b1bc;
+            margin-bottom: 21.34px;
+        }
+
+        .footerRightInfo {
+            & > * {
+                display: inline-block;
+                vertical-align: bottom;
+            }
+
+            .footerRightInfoPhone {
+                font-family: 'Product Sans', Arial, sans-serif;
+                font-size: 13.17px;
+                color: #444c52;
+                margin-right: 30.59px;
+            }
+
+            .footerRightInfoAddress {
+                font-family: 'Product Sans', Arial, sans-serif;
+                font-size: 13.17px;
+                color: #09c7ff;
+            }
+        }
+    }
+    @media screen and (max-width: 767px) {
+        & > * {
+            display: block;
+        }
+
+        .footerLeft {
+            margin-left: 8%;
+            margin-right: initial;
+            margin-bottom: 40px;
+
+            .footerLeftText {
+                width: 95%;
+            }
+        }
+
+        .footerRight {
+            margin-top: initial;
+            margin-left: 8%;
+            .footerRightText {
+                width: 95%;
+            }
+        }
+
+
+    }
+}

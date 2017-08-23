@@ -6,29 +6,73 @@ export default class HeaderComponent extends React.Component {
 		super(props);
 
 		this.state = {
-			width: '0',
-			height: '0',
+			width: window.outerWidth,
+			height: 0,
 			isMobileMenuClosed: true,
-			menuIcon: '../images/hamburger.png'
+			menuIcon: '../images/hamburger.png',
+			headerTopMenuClass: 'headerTopMenu',
+			overflowHtml: true
 		};
+
+		this.updateDimensions = this.updateDimensions.bind(this);
+  }
+
+  updateDimensions() {
+			var reelContainerWidth = window.outerWidth;
+			// sets the width of reel-container state to (window size - 400px)
+			this.setState({ width: reelContainerWidth });
+  		}
+
+  /**
+   * Add event listener
+   */
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+	/*this.updateDimensions;*/
+  }
+
+  
+
+  /**
+   * Remove event listener
+   */
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
   }
 
   
 
 	handleClick () {
-		this.setState({isMobileMenuClosed: !this.state.isMobileMenuClosed});
-		if(this.state.isMobileMenuClosed == false) {
-			this.setState({menuIcon: '../images/closeIcon.png'});
-			document.getElementsByClassName('headerTopMenu')[0].style.display = 'block';
-			document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
+		
+		this.setState({isMobileMenuClosed: !this.state.isMobileMenuClosed, overflowHtml: !this.state.overflowHtml});
+		switch(this.state.isMobileMenuClosed) {
+			case false:
+				this.setState({menuIcon: '../images/closeIcon.png', headerTopMenuClass: 'headerTopMenuMobile'});
+				/*document.getElementsByTagName('html')[0].style.overflowY = 'hidden';*/		
+				break;
+			case true: 
+				this.setState({menuIcon: '../images/hamburger.png', headerTopMenuClass: 'headerTopMenu'});
+				/*document.getElementsByTagName('html')[0].style.overflowY = 'auto';*/
+				break;
+			default: break;
+		}
+	}
+		
+
+	
+
+	/*mobileMenuHandler () {
+		window.addEventListener("resize", this.updateWidth.bind(this));
+		if(this.state.width < 768) {
+			this.setState({menuIcon: '../images/closeIcon.png', headerTopMenuClass: 'headerTopMenuMobile'});
+					
 		}
 		else {
-			this.setState({menuIcon: '../images/hamburger.png'});
-			document.getElementsByTagName('html')[0].style.overflowY = 'scroll';
-			document.getElementsByClassName('headerTopMenu')[0].style.display = 'none';
-			
-		}	
-	}
+			this.setState({headerTopMenuClass: 'headerTopMenu'});
+					
+		}
+		this.mobileMenuHandler.bind(this);
+	}*/
 
 
 
@@ -45,7 +89,7 @@ export default class HeaderComponent extends React.Component {
 					<div className="headerTopPhone">
 						+(0)385 91 5386 369
 					</div>
-					<ul className="headerTopMenu">
+					<ul className={this.state.headerTopMenuClass}>
 						<li>Home</li>
 						<li>Boats</li>
 						<li>Apartments</li>
