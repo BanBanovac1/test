@@ -1,82 +1,80 @@
 import React from 'react';
 
+let isMobileMenuClosed = true;
 
 export default class HeaderComponent extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			width: window.outerWidth,
-			height: 0,
+			width: window.innerWidth,
 			isMobileMenuClosed: true,
 			menuIcon: '../images/hamburger.png',
 			headerTopMenuClass: 'headerTopMenu',
-			overflowHtml: true
 		};
 
 		this.updateDimensions = this.updateDimensions.bind(this);
   }
 
-  updateDimensions() {
-			var reelContainerWidth = window.outerWidth;
-			// sets the width of reel-container state to (window size - 400px)
+  	updateDimensions() {
+			var reelContainerWidth = window.innerWidth;
 			this.setState({ width: reelContainerWidth });
-  		}
+			if (this.state.width > 767) {
+				this.hideMenuWhenResizing().bind(this);
+			}
+			else {
+				console.log(this.state.isMobileMenuClosed);
+				if(isMobileMenuClosed == false) {
+					this.showMenuWhenResizing().bind(this);
+				}
+			}
+ }
 
   /**
    * Add event listener
    */
-  componentDidMount() {
-    window.addEventListener("resize", this.updateDimensions);
-	/*this.updateDimensions;*/
-  }
+  	componentDidMount() {
+		window.addEventListener("resize", this.updateDimensions);
+    }
 
   
 
   /**
    * Remove event listener
    */
-  componentWillUnmount() {
+componentWillUnmount() {
     window.removeEventListener("resize", this.updateDimensions);
-  }
+}
 
-  
-
-	handleClick () {
-		
-		this.setState({isMobileMenuClosed: !this.state.isMobileMenuClosed, overflowHtml: !this.state.overflowHtml});
-		switch(this.state.isMobileMenuClosed) {
+handleClick () {
+		isMobileMenuClosed = !isMobileMenuClosed;
+		/*this.setState({isMobileMenuClosed: !this.state.isMobileMenuClosed});
+		console.log(this.state.isMobileMenuClosed);*/
+		switch(isMobileMenuClosed) {
 			case false:
 				this.setState({menuIcon: '../images/closeIcon.png', headerTopMenuClass: 'headerTopMenuMobile'});
-				/*document.getElementsByTagName('html')[0].style.overflowY = 'hidden';*/		
+				document.getElementsByTagName('html')[0].style.overflowY = 'hidden';	
 				break;
 			case true: 
 				this.setState({menuIcon: '../images/hamburger.png', headerTopMenuClass: 'headerTopMenu'});
-				/*document.getElementsByTagName('html')[0].style.overflowY = 'auto';*/
+				document.getElementsByTagName('html')[0].style.overflowY = 'auto';
 				break;
 			default: break;
 		}
-	}
-		
+}
 
+hideMenuWhenResizing () {
+	document.getElementsByTagName('html')[0].style.overflowY = 'auto';
+	this.setState({headerTopMenuClass: 'headerTopMenu'});
 	
+}
 
-	/*mobileMenuHandler () {
-		window.addEventListener("resize", this.updateWidth.bind(this));
-		if(this.state.width < 768) {
-			this.setState({menuIcon: '../images/closeIcon.png', headerTopMenuClass: 'headerTopMenuMobile'});
-					
-		}
-		else {
-			this.setState({headerTopMenuClass: 'headerTopMenu'});
-					
-		}
-		this.mobileMenuHandler.bind(this);
-	}*/
-
-
-
-    render() {
+showMenuWhenResizing () {
+	this.setState({headerTopMenuClass: 'headerTopMenuMobile'});
+	document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
+}
+		
+render() {
         return (
 			<div className="header">
 				<div className="headerTop">

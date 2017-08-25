@@ -25,17 +25,20 @@ body {
     
 
     .headerTop {
-        display: inline-block;
-        margin: auto;
+        display: block;
+        padding-left: 6.61%;
+        padding-right: 8.49%;
         margin-bottom: $headerTopMB;
         padding-top: $headerTopPadding;
 
-        & > * {
+        /*& > * {
             display: inline-block;
             vertical-align: middle;
-        }
+        }*/
 
         .headerTopTitle {
+            display: block;
+            float: left;
             padding-right: 34.86px;
             margin-right: 14.94px; 
             position: relative;
@@ -58,7 +61,9 @@ body {
         }
 
         .headerTopCallImg {
+            float: left;
             margin-right: 12.81px;
+            margin-top: 18px;
 
             img {
                 width: 16.36px;
@@ -67,15 +72,21 @@ body {
         }
 
         .headerTopPhone {
+            margin-top: 18px;
+            margin-right: 10px;
+            float: left;
             font-family: 'Product Sans', Arial, sans-serif;
             font-size: $headerTopPhoneFont;
             color: white;
-            margin-right: $headerPhoneMR;
+            /*margin-right: $headerPhoneMR;*/
         }
 
         .headerTopMenu {
+            width: 391.3px;
+            float: right;
             margin: 0;
             padding: 0;
+            margin-top: 16px;
             list-style-type: none;
             overflow: hidden;
 
@@ -237,7 +248,7 @@ body {
         }
     }
 
-    @media screen and (min-width: 1680px) and (max-width: 2560px) {
+   /* @media screen and (min-width: 1680px) and (max-width: 2560px) {
         .headerTop{
             padding-top: $headerTopPadding / 1366px * 1920px;
 
@@ -310,9 +321,9 @@ body {
             }
         }
 
-    }
+    }*/
 
-    @media screen and (max-width: 1233px) {
+   /* @media screen and (max-width: 1233px) {
         .headerTop {
             .headerTopPhone {
                 margin-right: $headerPhoneMR / 1366px * 800px;
@@ -326,26 +337,19 @@ body {
                 margin-right: $headerPhoneMR / 1366px * 600px;
             }
         }
-    }
+    }*/
 
-    @media screen and (max-width: 969px) {
-        .headerTop {
-            .headerTopTitle {
-                h1{
-                    font-size: $headerTopTitleFont / 1366px * 800px;
-                }
+   @media screen and (max-width: 923px) {
+       .headerTop {
+         width: 400px;
+         margin: auto;
+         margin-bottom: 140px;
+         text-align: left;
 
-                &:after {
-                    top: 2px;
-                }
-            }
-
-            .headerTopPhone {
-                font-size: $headerTopPhoneFont / 1366px * 800px;
-                margin-right: $headerPhoneMR / 1366px * 200px;
-            }
-        }
-
+         .headerTopMenu {
+             display: inline-block;
+         }
+       }
         .headerMain {
             .headerMainText {
                 width: 70%;
@@ -365,6 +369,7 @@ body {
         .headerTop {
             position: relative;
             display: block;
+            width: 100%;
             box-sizing: border-box;
             text-align: left;
             margin-bottom: $headerTopMB / 1366px * 767px;
@@ -376,10 +381,11 @@ body {
 
             .headerTopTitle {
                 margin-right: initial;
-                
+                float: none;
                 h1 {
                     font-size: 15.9px;
                     color: #345165;
+                    padding-top: 0;
                 }
                 
                  &:after {
@@ -430,8 +436,11 @@ body {
 
             .menuIcon {
                 display: block;
+                position: relative;
+                z-index: 2;
+                margin-top: -30px;
+                box-sizing: border-box;
                 float: right;
-                padding-top: 10px;
                 width: 25px;
                 height: auto;
                 cursor: pointer;
