@@ -70,8 +70,8 @@ export default class BookBoatCardComponent extends React.Component {
                     <div data-index={1} className={this.state.active1 ? 'choiceSelect' : 'choiceNotSelect'} onClick={this.changeChoiceClass}>yes</div>
                     <div data-index={2} className={this.state.active2 ? 'choiceSelect' : 'choiceNotSelect'} onClick={this.changeChoiceClass}>no</div>
                     <div className="skipperSelectPriceBox">
-                        <div className="skipperSelectPrice">320<span>€</span></div>
-                        <div className="skipperSelectText">per day</div>
+                        <div className={this.state.active1 ? 'selectPriceYes' : 'selectPriceNo'}>320<span>€</span></div>
+                        <div className={this.state.active1 ? 'selectPriceTextYes' : 'selectPriceTextNo'}>per day</div>
                     </div>
                 </div>
                 <div className="bookBoatPetsSelect">
@@ -80,8 +80,8 @@ export default class BookBoatCardComponent extends React.Component {
                     <div data-index={3} className={this.state.active3 ? 'choiceSelect' : 'choiceNotSelect'} onClick={this.changeChoiceClass}>yes</div>
                     <div data-index={4} className={this.state.active4 ? 'choiceSelect' : 'choiceNotSelect'} onClick={this.changeChoiceClass}>no</div>
                     <div className="petsSelectPriceBox">
-                        <div className="petsSelectPrice">12<span>€</span></div>
-                        <div className="petsSelectText">per day</div>
+                        <div className={this.state.active3 ? 'selectPriceYes' : 'selectPriceNo'}>12<span>€</span></div>
+                        <div className={this.state.active3 ? 'selectPriceTextYes' : 'selectPriceTextNo'}>per day</div>
                     </div>
                 </div>
                 <a href="#" className="bookBoatButton">Book now</a>

@@ -3,6 +3,11 @@
   src: url('../fonts/MyriadPro-Regular.woff');
 }
 
+@font-face {
+    font-family: 'MyriadProBold';
+    src: url('../fonts/Myriad Pro Bold.ttf');
+}
+
 @import 'sizes.scss';
 
 html {
@@ -31,11 +36,6 @@ body {
         margin-bottom: $headerTopMB;
         padding-top: $headerTopPadding;
 
-        /*& > * {
-            display: inline-block;
-            vertical-align: middle;
-        }*/
-
         .headerTopTitle {
             display: block;
             float: left;
@@ -55,7 +55,7 @@ body {
                 width: 1px;
                 height: 22.06px;
                 background-color: white;
-                top: 12px;
+                top: 14px;
                 right: 0px;
             }
         }
@@ -93,9 +93,13 @@ body {
             li {
                 display: inline-block;
                 margin-right: 33.44px;
-                font-family: 'Product Sans', Arial, sans-serif;
-                font-size: $headerTopMenuFont;
-                color: white;
+                a {
+                    font-family: 'Product Sans', Arial, sans-serif;
+                    font-size: $headerTopMenuFont;
+                    color: white;
+                    text-decoration: none;
+                }
+                
 
                 &:hover {
                     cursor: pointer;
@@ -127,6 +131,10 @@ body {
                 font-size: $headerMainTitleFont;
                 font-weight: bold;
                 color: white;
+
+                span {
+                    font-family: 'MyriadProBold', Arial, sans-serif;
+                }
             }
         }
 
@@ -382,10 +390,16 @@ body {
             .headerTopTitle {
                 margin-right: initial;
                 float: none;
+
                 h1 {
                     font-size: 15.9px;
                     color: #345165;
                     padding-top: 0;
+                    font-weight: 600;
+
+                    span {
+                        font-weight: bold;
+                    }
                 }
                 
                  &:after {
@@ -404,6 +418,7 @@ body {
             .headerTopMenuMobile {
                 box-sizing: border-box;
                 overflow-y: auto;
+                height: 1000px;
                 margin: 0;
                 padding: 0;
                 display: block;
@@ -412,7 +427,7 @@ body {
                 top: 99%;
                 left: 0;
                 padding-top: 72.96px;
-                padding-bottom: 400px;
+                padding-bottom: 800px;
                 background-color: white;
                 -webkit-box-shadow: inset 2px 13px 5px -5px rgba(0,0,0,0.03);
                 -moz-box-shadow: inset 2px 13px 5px -5px rgba(0,0,0,0.03);
@@ -420,16 +435,22 @@ body {
 
                 li {
                     display: block;
-                    font-family: 'Product Sans', Arial, sans-serif;
                     cursor: pointer;
                     text-align: center;
                     margin-bottom: 38.4px;
-                    font-size: 27.29px;
-                    color: #a1b1bc;
+
+                    a {
+                        font-family: 'Product Sans', Arial, sans-serif;
+                        text-decoration: none;
+                        font-size: 27.29px;
+                        color: #a1b1bc;
+                    }
 
                     &:hover {
-                        font-weight: normal;
-                        color: #345165;
+                        a {
+                            font-weight: normal;
+                            color: #345165;
+                        }
                     }
                 }
             }
@@ -470,6 +491,7 @@ body {
                 .headerMainMenuListItem {
                     padding-left: 20px;
                     padding-right: 20px;
+                    margin-bottom: 10px;
 
                     &:first-child {
                         border-radius: 0;

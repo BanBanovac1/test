@@ -79,7 +79,7 @@ render() {
 			<div className="header">
 				<div className="headerTop">
 					<div className="headerTopTitle">
-						<h1>EXPLOREcroatia</h1>
+						<h1><span>EXPLORE</span>croatia</h1>
 					</div>
 					<div className="headerTopCallImg">
 						<img src="../images/call.png" alt="call" /> 
@@ -88,17 +88,17 @@ render() {
 						+(0)385 91 5386 369
 					</div>
 					<ul className={this.state.headerTopMenuClass}>
-						<li>Home</li>
-						<li>Boats</li>
-						<li>Apartments</li>
-						<li>Explore</li>
-						<li>Contact</li>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Boats</a></li>
+						<li><a href="#">Apartments</a></li>
+						<li><a href="#">Explore</a></li>
+						<li><a href="#">Contact</a></li>
 					</ul>
 					<img src={this.state.menuIcon} className="menuIcon"  alt="menu" onClick={this.handleClick.bind(this)} />
 				</div>
 				<div className="headerMain">
 					<div className="headerMainTitle">
-						<h2>New adventure every day!</h2> 
+						<h2><span>New adventure</span> every day!</h2> 
 					</div>
 					<div className="headerMainText">
 						Book homes, boats & trips to the prettiest destinations in the world.
