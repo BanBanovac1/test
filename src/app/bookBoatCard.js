@@ -1,4 +1,5 @@
 import React from 'react';
+import { DatePicker } from 'antd';
 
 export default class BookBoatCardComponent extends React.Component {
     constructor(props) {
@@ -7,29 +8,56 @@ export default class BookBoatCardComponent extends React.Component {
             active1: false,
             active2: false,
             active3: false,
-            active4: false
+            active4: false,
+            dateCheckIn: "Check in date",
+            dateCheckOut: "Check out date",
+            numberOfPeople: 3
         };
 
         this.changeChoiceClass = this.changeChoiceClass.bind(this);
+        this.onDatePickerInChange = this.onDatePickerInChange.bind(this);
+        this.onDatePickerOutChange = this.onDatePickerOutChange.bind(this);
+        this.increasePeople = this.increasePeople.bind(this);
+        this.decreasePeople = this.decreasePeople.bind(this);
     }
 
     changeChoiceClass(event) {
         let indexValue = event.currentTarget.getAttribute('data-index');
         switch (indexValue) {
             case '1':
-                this.setState({ active1: !this.state.active1 , active2: false});
+                this.setState({ active1: !this.state.active1, active2: false });
                 break;
             case '2':
-                this.setState({ active2: !this.state.active2 , active1: false});
+                this.setState({ active2: !this.state.active2, active1: false });
                 break;
             case '3':
-                this.setState({ active3: !this.state.active3, active4: false});
+                this.setState({ active3: !this.state.active3, active4: false });
                 break;
             case '4':
                 this.setState({ active4: !this.state.active4, active3: false });
                 break;
             default: break;
         }
+    }
+
+    onDatePickerInChange(date, dateString) {
+        this.setState({ dateCheckIn: dateString });
+    }
+
+    onDatePickerOutChange(date, dateString) {
+        this.setState({ dateCheckOut: dateString });
+    }
+
+    decreasePeople() {
+        let numPeople = this.state.numberOfPeople - 1;
+        if (numPeople >= 1) {
+            this.setState({ numberOfPeople: numPeople });
+        }
+    }
+
+    increasePeople() {
+        let numPeople = this.state.numberOfPeople + 1;
+        this.setState({ numberOfPeople: numPeople });
     }
 
     render() {
@@ -45,13 +73,15 @@ export default class BookBoatCardComponent extends React.Component {
                 </div>
                 <div className="bookBoatCardCheckDate">
                     <div className="checkDateBox">
+                        <DatePicker data-index={1} className="datePicker" placeholder="Check in date" onChange={this.onDatePickerInChange} />
                         <img className="dateIcon" src="../images/dateIcon.png" alt="date" />
-                        <div className="checkDateText">Check in date</div>
+                        <div className="checkDateText">{this.state.dateCheckIn}</div>
                         <img className="backIcon" src="../images/backIcon.png" alt="back" />
                     </div>
                     <div className="checkDateBox right">
+                        <DatePicker data-index={2} className="datePicker" placeholder="Check out date" onChange={this.onDatePickerOutChange} />
                         <img className="dateIcon" src="../images/dateIcon.png" alt="date" />
-                        <div className="checkDateText">Check out date</div>
+                        <div className="checkDateText">{this.state.dateCheckOut}</div>
                         <img className="backIcon" src="../images/backIcon.png" alt="back" />
                     </div>
                 </div>
@@ -59,9 +89,9 @@ export default class BookBoatCardComponent extends React.Component {
                     <img className="bookBoatPeopleIcon" src="../images/peopleIcon.png" alt="people" />
                     <div className="bookBoatPeopleSelectText">Number of people: </div>
                     <div className="bookBoatPeopleSelectNumberBox">
-                        <img className="bookBoatMinus" src="../images/minusIcon.png" alt="minus" />
-                        <div className="bookBoatPeopleNumber">3</div>
-                        <img className="bookBoatPlus" src="../images/plusIcon.png" alt="plus" />
+                        <img className="bookBoatMinus" src="../images/minusIcon.png" alt="minus" onClick={this.decreasePeople}/>
+                        <div className="bookBoatPeopleNumber">{this.state.numberOfPeople}</div>
+                        <img className="bookBoatPlus" src="../images/plusIcon.png" alt="plus" onClick={this.increasePeople}/>
                     </div>
                 </div>
                 <div className="bookBoatSkipperSelect">

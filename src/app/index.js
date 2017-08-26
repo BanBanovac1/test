@@ -1,10 +1,12 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 require('../styles/header.scss');
 require('../styles/booking.scss');
 require('../styles/footer.scss');
 
+import {LocaleProvider} from 'antd';
+import enUS from 'antd/lib/locale-provider/en_US';
 import HeaderComponent from './header.js';
 import FooterComponent from './footer.js';
 import BoatCardComponent from './boatCard.js';
@@ -39,4 +41,4 @@ class AppComponent extends React.Component {
 
 
 //put component into html page
-ReactDOM.render(<AppComponent />, document.getElementById('app-wrapper'));
+ReactDOM.render(<LocaleProvider locale={enUS}><AppComponent /></LocaleProvider>, document.getElementById('app-wrapper'));

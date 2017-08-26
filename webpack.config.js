@@ -1,5 +1,10 @@
 var path = require('path');
 
+
+const fs = require('fs');
+const lessToJs = require('less-vars-to-js');
+const themeVariables = lessToJs(fs.readFileSync(path.join(__dirname, './ant-theme-vars.less'), 'utf8'));
+
 module.exports = {
 
     entry: path.resolve(__dirname, 'src') + '/app/index.js',
@@ -15,7 +20,10 @@ module.exports = {
                 include: path.resolve(__dirname, 'src'),
                 loader: 'babel-loader',
                 query: {
-                    presets: ['react', 'es2015']
+                    presets: ['react', 'es2015'],
+                    plugins: [
+                        ['import', { libraryName: "antd", style: true }]
+                    ]
                 }
             },
             {
@@ -23,14 +31,37 @@ module.exports = {
                 loader: 'style-loader!css-loader!sass-loader'
             },
             {
+                test: /\.less$/,
+                use: [{
+                    loader: "style-loader"
+                }, {
+                    loader: "css-loader"
+                }, {
+                    loader: "less-loader", options: {
+                        paths: [
+                            path.resolve(__dirname, "node_modules")
+                        ]
+                    }
+                }]
+                /*loader: 'style-loader!css-loader!less-loader',
+                query: {
+                    modifyVars: themeVariables
+                },
+                options: {
+                    paths: [
+                        path.resolve(__dirname, "node_modules")
+                    ]
+                }*/
+            },
+            {
                 test: /\.(png|jpg|gif)$/,
                 use: [
-                {
-                    loader: 'url-loader',
-                    options: {
-                        mimetype: 'image/png'
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            mimetype: 'image/png'
+                        }
                     }
-                }
                 ]
             },
             {
@@ -38,10 +69,10 @@ module.exports = {
                 use: [
                     {
                         loader: 'file-loader',
-                        options: {}  
+                        options: {}
                     }
                 ]
             }
         ]
-    }
+    },
 };
