@@ -1,10 +1,6 @@
 var path = require('path');
 
 
-const fs = require('fs');
-const lessToJs = require('less-vars-to-js');
-const themeVariables = lessToJs(fs.readFileSync(path.join(__dirname, './ant-theme-vars.less'), 'utf8'));
-
 module.exports = {
 
     entry: path.resolve(__dirname, 'src') + '/app/index.js',
@@ -43,15 +39,6 @@ module.exports = {
                         ]
                     }
                 }]
-                /*loader: 'style-loader!css-loader!less-loader',
-                query: {
-                    modifyVars: themeVariables
-                },
-                options: {
-                    paths: [
-                        path.resolve(__dirname, "node_modules")
-                    ]
-                }*/
             },
             {
                 test: /\.(png|jpg|gif)$/,

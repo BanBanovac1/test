@@ -1,4 +1,5 @@
 import React from 'react';
+import {DatePicker} from 'antd';
 
 let isMobileMenuClosed = true;
 
@@ -11,11 +12,15 @@ export default class HeaderComponent extends React.Component {
 			isMobileMenuClosed: true,
 			menuIcon: '../images/hamburger.png',
 			headerTopMenuClass: 'headerTopMenu',
+			startDateText: 'Starting date',
+			endDateText: 'Ending date'
 		};
 
 		this.updateDimensions = this.updateDimensions.bind(this);
 		this.hideMenuWhenResizing = this.hideMenuWhenResizing.bind(this);
 		this.showMenuWhenResizing =  this.showMenuWhenResizing.bind(this);
+		this.onStartDateChange = this.onStartDateChange.bind(this);
+		this.onEndDateChange = this.onEndDateChange.bind(this);
 	}
 
 	updateDimensions() {
@@ -75,18 +80,28 @@ export default class HeaderComponent extends React.Component {
 		document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
 	}
 
+	onStartDateChange (date, dateString) {
+		this.setState({startDateText: dateString});
+	}
+	
+	onEndDateChange (date, dateString) {
+		this.setState({endDateText: dateString});
+	}
+
 	render() {
 		return (
 			<div className="header">
 				<div className="headerTop">
-					<div className="headerTopTitle">
-						<h1><span>EXPLORE</span>croatia</h1>
-					</div>
-					<div className="headerTopCallImg">
-						<img src="../images/call.png" alt="call" />
-					</div>
-					<div className="headerTopPhone">
-						+(0)385 91 5386 369
+					<div className="headerTopLeft">
+						<div className="headerTopTitle">
+							<h1><span>EXPLORE</span>croatia</h1>
+						</div>
+						<div className="headerTopCallImg">
+							<img src="../images/call.png" alt="call" />
+						</div>
+						<div className="headerTopPhone">
+							+(0)385 91 5386 369
+						</div>
 					</div>
 					<ul className={this.state.headerTopMenuClass}>
 						<li><a title="Home" href="#">Home</a></li>
@@ -107,6 +122,7 @@ export default class HeaderComponent extends React.Component {
 					</div>
 					<div className="headerMainMenuList">
 						<div className="headerMainMenuListItem">
+							
 							<img className="boatIcon" src="../images/boatIcon.png" alt="boat" />
 							<div className="headerMainMenuListItemText">Choose boat type</div>
 							<img className="backIcon" src="../images/backIcon.png" alt="back" />
@@ -117,13 +133,15 @@ export default class HeaderComponent extends React.Component {
 							<img className="backIcon" src="../images/backIcon.png" alt="back" />
 						</div>
 						<div className="headerMainMenuListItem">
+							<DatePicker className="datePicker" onChange={this.onStartDateChange}/>
 							<img className="dateIcon" src="../images/dateIcon.png" alt="boat" />
-							<div className="headerMainMenuListItemText">Starting date</div>
+							<div className="headerMainMenuListItemText">{this.state.startDateText}</div>
 							<img className="backIcon" src="../images/backIcon.png" alt="back" />
 						</div>
 						<div className="headerMainMenuListItem">
+							<DatePicker className="datePicker" onChange={this.onEndDateChange} />
 							<img className="dateIcon" src="../images/dateIcon.png" alt="boat" />
-							<div className="headerMainMenuListItemText">Ending date</div>
+							<div className="headerMainMenuListItemText">{this.state.endDateText}</div>
 							<img className="backIcon" src="../images/backIcon.png" alt="back" />
 						</div>
 						<div className="headerMainMenuListButton">Search</div>

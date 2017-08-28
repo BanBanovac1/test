@@ -79,14 +79,16 @@ export default class HeaderContactComponent extends React.Component {
 		return (
 			<div className="headerContact">
 				<div className="headerTop">
-					<div className="headerTopTitle">
-						<h1><span>EXPLORE</span>croatia</h1>
-					</div>
-					<div className="headerTopCallImg">
-						<img src="../images/call.png" alt="call" />
-					</div>
-					<div className="headerTopPhone">
-						+(0)385 91 5386 369
+					<div className="headerTopLeft">
+						<div className="headerTopTitle">
+							<h1><span>EXPLORE</span>croatia</h1>
+						</div>
+						<div className="headerTopCallImg">
+							<img src="../images/call.png" alt="call" />
+						</div>
+						<div className="headerTopPhone">
+							+(0)385 91 5386 369
+						</div>
 					</div>
 					<ul className={this.state.headerTopMenuClass}>
 						<li><a title="Home" href="#">Home</a></li>

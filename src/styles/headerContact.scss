@@ -1,5 +1,3 @@
-@import 'sizes.scss';
-
 .headerContact {
     width: 100%;
     background-image: url(../images/headerBackground1.png);
@@ -8,66 +6,73 @@
     background-size: cover;
     padding-bottom: 98.89px;
     text-align: center;
+  
     
-
-    .headerTop {
+    .headerTop{
         display: block;
         padding-left: 6.61%;
         padding-right: 8.49%;
         margin-bottom: $headerTopMB;
         padding-top: $headerTopPadding;
 
-        .headerTopTitle {
-            display: block;
+    .headerTopLeft {
             float: left;
-            padding-right: 34.86px;
-            margin-right: 14.94px; 
-            position: relative;
+             
+            & > * {
+                display: inline-block;
+                vertical-align: middle;
+            }
 
-            h1 {
+            .headerTopTitle {
+                padding-right: 34.86px;
+                margin-right: 14.94px; 
+                position: relative;
+
+                h1 {
+                    font-family: 'Product Sans', Arial, sans-serif;
+                    font-size: $headerTopTitleFont;
+                    color: white;
+                    font-weight: bold;
+                }
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    width: 1px;
+                    height: 22.06px;
+                    background-color: white;
+                    top: 15px;
+                    right: 0px;
+                }
+            }
+
+            .headerTopCallImg {
+                margin-right: 12.81px;
+                margin-top: 5px;
+
+                img {
+                    width: 16.36px;
+                    height: auto;
+                }
+            }
+
+            .headerTopPhone {
+                margin-top: 5px;
+                margin-right: 10px;
                 font-family: 'Product Sans', Arial, sans-serif;
-                font-size: $headerTopTitleFont;
+                font-size: $headerTopPhoneFont;
                 color: white;
-                font-weight: bold;
+                /*margin-right: $headerPhoneMR;*/
             }
+    }
+        
 
-            &:after {
-                position: absolute;
-                content: '';
-                width: 1px;
-                height: 22.06px;
-                background-color: white;
-                top: 3px;
-                right: 0px;
-            }
-        }
-
-        .headerTopCallImg {
-            float: left;
-            margin-right: 12.81px;
-            margin-top: 5px;
-
-            img {
-                width: 16.36px;
-                height: auto;
-            }
-        }
-
-        .headerTopPhone {
-            margin-top: 5px;
-            margin-right: 10px;
-            float: left;
-            font-family: 'Product Sans', Arial, sans-serif;
-            font-size: $headerTopPhoneFont;
-            color: white;
-            /*margin-right: $headerPhoneMR;*/
-        }
 
         .headerTopMenu {
             float: right;
             margin: 0;
             padding: 0;
-            margin-top: 8px;
+            margin-top: 18px;
             list-style-type: none;
             overflow: hidden;
 
@@ -108,6 +113,8 @@
             display: none;
         }
     }
+    
+    
 
     .headerMain {
        .headerMainTitle {
@@ -139,6 +146,7 @@
           
        }
     }
+    
 
 
    /* @media screen and (min-width: 1680px) and (max-width: 2560px) {
@@ -241,6 +249,10 @@
          padding-left: 0;
          padding-right: 0;
 
+         .headerTopLeft {
+             float: none;
+         }
+
          .headerTopMenu {
             /* text-align: left;*/
              display: inline-block;
@@ -264,29 +276,33 @@
             padding-bottom: 15px;
             background-color: white;
 
-            .headerTopTitle {
-                margin-right: initial;
-                display: block;
+            .headerTopLeft {
                 float: none;
 
-                h1 {
-                    font-size: 15.9px;
-                    color: #345165;
-                    padding-top: 0;
-                    font-weight: 600;
+                .headerTopTitle {
+                    margin-right: initial;
+                    display: block;
+                    float: none;
 
-                    span {
-                        font-weight: bold;
+                    h1 {
+                        font-size: 15.9px;
+                        color: #345165;
+                        padding-top: 0;
+                        font-weight: 600;
+
+                        span {
+                            font-weight: bold;
+                        }
+                    }
+                    
+                    &:after {
+                        display: none;
                     }
                 }
-                
-                 &:after {
+            
+                .headerTopCallImg, .headerTopPhone {
                     display: none;
                 }
-            }
-
-            .headerTopCallImg, .headerTopPhone {
-                display: none;
             }
 
             .headerTopMenu {
@@ -337,7 +353,7 @@
                 display: block;
                 position: relative;
                 z-index: 2;
-                margin-top: -26px;
+                margin-top: -33px;
                 box-sizing: border-box;
                 float: right;
                 width: 25px;
@@ -347,5 +363,6 @@
         }
     }
 }
+
       
     
