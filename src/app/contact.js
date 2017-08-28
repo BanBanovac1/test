@@ -1,10 +1,125 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import HeaderContactComponent from './headerContact.js';
 import Container from './mapContainer.js';
 
 export default class ContactComponent extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            isClicked1: false,
+            isClicked2: false,
+            isClicked3: false
+        };
+
+        this.handleBoxClick = this.handleBoxClick.bind(this);
+        this.changeBorder = this.changeBorder.bind(this);
+        this.showCheckIcon = this.showCheckIcon.bind(this);
+    }
+
+    handleBoxClick(event) {
+        let indexValue = event.currentTarget.getAttribute('data-index');
+        switch (indexValue) {
+            case '1':
+                this.setState({ isClicked1: !this.state.isClicked1 }, function(){
+                    this.changeBorder(indexValue);
+                    this.showCheckIcon(indexValue);
+                });           
+                break;
+            case '2':
+                this.setState({ isClicked2: !this.state.isClicked2 },  function(){
+                    this.changeBorder(indexValue);
+                    this.showCheckIcon(indexValue);
+                });
+                break;
+            case '3':
+                this.setState({ isClicked3: !this.state.isClicked3 }, function(){
+                    this.changeBorder(indexValue);
+                    this.showCheckIcon(indexValue);
+                });
+                break;
+            default: break;
+        }
+    }
+
+    changeBorder(a) {
+        let qBox1 = ReactDOM.findDOMNode(this.refs.questionBox1);
+        let qBox2 = ReactDOM.findDOMNode(this.refs.questionBox2);
+        let qBox3 = ReactDOM.findDOMNode(this.refs.questionBox3);
+
+        switch(a){
+            case '1': 
+                if(this.state.isClicked1 === true){
+                    qBox1.style.borderColor = '#09c7ff';
+                }
+                else {
+                    qBox1.style.borderColor = '#c1cbd2';
+                }
+                break;
+            case '2': 
+                if(this.state.isClicked2 === true) {
+                   qBox2.style.borderColor = '#09c7ff'; 
+                }
+                else {
+                    qBox2.style.borderColor = '#c1cbd2';
+                }
+                break;
+            case '3': 
+                if(this.state.isClicked3 === true) {
+                    qBox3.style.borderColor = '#09c7ff';
+                }
+                else {
+                    qBox3.style.borderColor = '#c1cbd2';
+                }
+                break;
+            default: break;
+               
+        }
+    }
+
+    showCheckIcon(a) {
+        let cBox1 = ReactDOM.findDOMNode(this.refs.checkBox1);
+        let cIcon1 = ReactDOM.findDOMNode(this.refs.checkIcon1);
+        let cBox2 = ReactDOM.findDOMNode(this.refs.checkBox2);
+        let cIcon2 = ReactDOM.findDOMNode(this.refs.checkIcon2);
+        let cBox3 = ReactDOM.findDOMNode(this.refs.checkBox3);
+        let cIcon3 = ReactDOM.findDOMNode(this.refs.checkIcon3);
+
+        switch(a) {
+            case '1': 
+                if(this.state.isClicked1 === true) {
+                    cBox1.style.border = 'none';
+                    cIcon1.style.display = 'block';
+                }
+                else {
+                    cBox1.style.border = '1px solid #c1cbd2';
+                    cIcon1.style.display = 'none';
+                }
+                break;
+            case '2':
+                 if(this.state.isClicked2 === true) {
+                    cBox2.style.border = 'none';
+                    cIcon2.style.display = 'block';
+                }
+                else {
+                    cBox2.style.border = '1px solid #c1cbd2';
+                    cIcon2.style.display = 'none';
+                }
+                break;
+            case '3': 
+                 if(this.state.isClicked3 === true) {
+                    cBox3.style.border = 'none';
+                    cIcon3.style.display = 'block';
+                }
+                else {
+                    cBox3.style.border = '1px solid #c1cbd2';
+                    cIcon3.style.display = 'none';
+                }
+                break;
+            default: break;
+        }
+        
     }
 
     render() {
@@ -14,7 +129,7 @@ export default class ContactComponent extends React.Component {
                 <div className="questionBox">
                     <div className="questionBoxTitle">Select question type</div>
                     <div className="questionBoxRow1">
-                        <div className="questionBoxRow1Box">
+                        <div ref="questionBox1" data-index={1} className="questionBoxRow1Box" onClick={this.handleBoxClick}>
                             <div className="questionBoxRow1BoxImgCnt">
                                 <img className="questionBoxRow1Img" src="../images/services.png" alt="services" />
                             </div>
@@ -23,11 +138,12 @@ export default class ContactComponent extends React.Component {
                                     <div className="questionBoxRow1BoxTitle">Services</div>
                                     <div className="questionBoxRow1BoxSubtitle">select</div>
                                 </div>
-                                <div className="questionBoxRow1CheckContainer">
+                                <div ref="checkBox1" className="questionBoxRow1CheckContainer">
+                                    <img ref="checkIcon1" className="checkIcon" src="../images/checkIcon.png" alt="checkIcon" />
                                 </div>
                             </div>
                         </div>
-                        <div className="questionBoxRow1Box">
+                        <div ref="questionBox2" data-index={2} className="questionBoxRow1Box" onClick={this.handleBoxClick}>
                             <div className="questionBoxRow1BoxImgCnt">
                                 <img className="questionBoxRow1Img" src="../images/payment.png" alt="services" />
                             </div>
@@ -36,11 +152,13 @@ export default class ContactComponent extends React.Component {
                                     <div className="questionBoxRow1BoxTitle">Payment</div>
                                     <div className="questionBoxRow1BoxSubtitle">select</div>
                                 </div>
-                                <div className="questionBoxRow1CheckContainer">
+                                <div ref="checkBox2" className="questionBoxRow1CheckContainer" >
+                                    <img ref="checkIcon2" className="checkIcon" src="../images/checkIcon.png" alt="checkIcon" />
                                 </div>
+
                             </div>
                         </div>
-                        <div className="questionBoxRow1Box">
+                        <div ref="questionBox3" data-index={3} className="questionBoxRow1Box" onClick={this.handleBoxClick}>
                             <div className="questionBoxRow1BoxImgCnt">
                                 <img className="questionBoxRow1Img" src="../images/other.png" alt="services" />
                             </div>
@@ -49,7 +167,8 @@ export default class ContactComponent extends React.Component {
                                     <div className="questionBoxRow1BoxTitle">Other</div>
                                     <div className="questionBoxRow1BoxSubtitle">select</div>
                                 </div>
-                                <div className="questionBoxRow1CheckContainer">
+                                <div ref="checkBox3"className="questionBoxRow1CheckContainer" >
+                                    <img ref="checkIcon3"className="checkIcon" src="../images/checkIcon.png" alt="checkIcon" />
                                 </div>
                             </div>
                         </div>
@@ -94,8 +213,8 @@ export default class ContactComponent extends React.Component {
                         </div>
                     </div>
                     <div className="contactMap"><Container /></div>
-                    
-                   
+
+
                 </div>
             </div>
         );

@@ -30,8 +30,9 @@
                 width: 145.14px;
                 height: 140.62px;
                 border-radius: 2px;
-               /* padding: 17.04px 15.65px 17.04px 15.65px;*/
                 border: 1px solid #c1cbd2;
+                cursor: pointer;
+
 
                 .questionBoxRow1BoxImgCnt {
                     height: 81.11px;
@@ -91,6 +92,13 @@
                         height: 19.92px;
                         border: 1px solid #c1cbd2;
                         border-radius: 100%;
+                        text-align: center;
+
+                        .checkIcon {
+                            display: none;
+                            width: 19.92px;
+                            height: 19.92px;
+                        }
                     }
                 }
             }
