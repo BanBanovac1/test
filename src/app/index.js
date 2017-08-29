@@ -1,11 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-/*require('../styles/header.scss');
-require('../styles/booking.scss');
-require('../styles/footer.scss');
-require('../styles/contact.scss');
-require('../styles/headerContact.scss');*/
 import { LocaleProvider } from 'antd';
 import enUS from 'antd/lib/locale-provider/en_US';
 import HeaderComponent from './header.js';
