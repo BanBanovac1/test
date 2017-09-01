@@ -32,6 +32,7 @@ class AppComponent extends React.Component {
 					</div>
 				</div>
 				<FooterComponent />*/}
+				{/*dffdfd*/}
 			</div>
 		);
 	}
