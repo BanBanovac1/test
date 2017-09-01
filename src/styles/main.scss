@@ -1,8 +1,15 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 @import 'sizes.scss';
 @import 'fonts.scss';
 @import 'normalize.scss';
-@import 'booking.scss';
+@import 'global.scss';
+@import 'boatCard.scss';
+@import 'bookTourCard.scss';
+@import 'bookBoatCard.scss';
 @import 'contact.scss';
 @import 'footer.scss';
 @import 'header.scss';
 @import 'headerContact.scss';
+@import 'home.scss';
+@import 'sliderItem.scss';

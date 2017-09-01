@@ -49,30 +49,28 @@ export default class HeaderContactComponent extends React.Component {
 
 	handleClick() {
 		isMobileMenuClosed = !isMobileMenuClosed;
-		/*this.setState({isMobileMenuClosed: !this.state.isMobileMenuClosed});
-		console.log(this.state.isMobileMenuClosed);*/
 		switch (isMobileMenuClosed) {
 			case false:
 				this.setState({ menuIcon: '../images/closeIcon.png', headerTopMenuClass: 'headerTopMenuMobile' });
-				document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
+				document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
 				break;
 			case true:
 				this.setState({ menuIcon: '../images/hamburger.png', headerTopMenuClass: 'headerTopMenu' });
-				document.getElementsByTagName('html')[0].style.overflowY = 'auto';
+				document.getElementsByTagName('body')[0].style.overflowY = 'auto';
 				break;
 			default: break;
 		}
 	}
 
 	hideMenuWhenResizing() {
-		document.getElementsByTagName('html')[0].style.overflowY = 'auto';
+		document.getElementsByTagName('body')[0].style.overflowY = 'auto';
 		this.setState({ headerTopMenuClass: 'headerTopMenu' });
 
 	}
 
 	showMenuWhenResizing() {
 		this.setState({ headerTopMenuClass: 'headerTopMenuMobile' });
-		document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
+		document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
 	}
 
 	render() {

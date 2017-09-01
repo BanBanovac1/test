@@ -1,13 +1,5 @@
-html {
-    overflow-x: hidden;
-}
-
-body {
-    width: 100%;
-    overflow-x: hidden;
-}
-
 .header {
+    position: relative;
     width: 100%;
     background-image: url(../images/headerBackground.png);
     background-repeat: no-repeat;
@@ -177,6 +169,10 @@ body {
 
                 .datePicker {
                     position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
                     width: 100%;
                     height: 100%;
                     opacity: 0;
@@ -244,6 +240,7 @@ body {
     .headerVideo {
         display: inline-block;
         margin-left: 75.73%;
+        margin-bottom: 41.26px;
 
         & > * {
             display: inline-block;
@@ -268,6 +265,107 @@ body {
 
             img {
                 width: 12.09px;
+            }
+        }
+    }
+
+    .headerBottom {    
+        margin: auto;
+        margin-bottom: -300px;
+        width: 1098.73px;
+        background-color: white;
+        border-radius: 3px;
+        padding: 41.98px 58.34px 58.34px 58.34px;
+         -webkit-box-shadow: 2px 2px 24px 9px rgba(0,0,0,0.11);
+        -moz-box-shadow: 2px 2px 24px 9px rgba(0,0,0,0.11);
+        box-shadow: 2px 2px 24px 9px rgba(0,0,0,0.11);
+
+        .headerBottomTitle {
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 23.48px;
+            color: #2a4253;
+            margin-bottom: 47.67px;
+            text-align: left;
+
+            span {
+                font-weight: bold;
+            }
+        }
+
+        .headerBottomContent {
+           display: flex;
+           flex-direction: row;
+           flex-wrap: wrap;
+           text-align: left;
+           /* & > * {
+                display: inline-block;
+                vertical-align: top;
+            }*/
+
+            .headerBottomItem {
+                
+               &:not(:last-child) {
+                    margin-right: 32.02px;
+               }
+
+                & > * {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+
+                .headerBottomIcon {
+                    width: 82.53px;
+                    margin-right: 20.04px;
+                }
+
+                .headerBottomItemText {
+                    text-align: left;
+
+                    .headerBottomItemTextTitle {
+                        font-family: 'Product Sans', Arial, sans-serif;
+                        font-size: 15.61px;
+                        color: #052833;
+                        margin-bottom: 18.5px;
+
+                        span {
+                            font-weight: bold;
+                        }
+                    }
+
+                    .headerBottomItemTextDesc {
+                        width: 175px;
+                        font-family: 'Product Sans', Arial, sans-serif;
+                        font-size: 11.35px;
+                        color: #a1b1bc;
+                    }
+                }
+            }
+        }
+
+        @media screen and(max-width: 1110px) {
+            width: 100%;
+            padding-left: 2%;
+
+            .headerBottomContent {
+                margin-top: -15px;
+
+                & > * {
+                    margin-top: 15px;
+                }
+            }
+
+            @media screen and(max-width: 393px) {
+                .headerBottomContent {
+                    .headerBottomItem {
+                        & > * {
+                            display: block;
+                        }
+
+                        .headerBottomIcon {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -449,9 +547,10 @@ body {
             }
 
             .headerTopMenuMobile {
-                box-sizing: border-box;
-                overflow-y: hidden;
-                height: 630px;
+               /* box-sizing: border-box;*/
+                z-index: 3;
+                overflow-y:auto;
+               /* height: 1000px;*/
                 margin: 0;
                 padding: 0;
                 display: block;
@@ -460,7 +559,7 @@ body {
                 top: 99%;
                 left: 0;
                 padding-top: 72.96px;
-                /*padding-bottom: 400px;*/
+                padding-bottom: 72.96px;
                 background-color: white;
                 -webkit-box-shadow: inset 2px 13px 5px -5px rgba(0,0,0,0.03);
                 -moz-box-shadow: inset 2px 13px 5px -5px rgba(0,0,0,0.03);

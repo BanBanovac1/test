@@ -59,25 +59,25 @@ export default class HeaderComponent extends React.Component {
 		switch (isMobileMenuClosed) {
 			case false:
 				this.setState({ menuIcon: '../images/closeIcon.png', headerTopMenuClass: 'headerTopMenuMobile' });
-				document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
+				document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
 				break;
 			case true:
 				this.setState({ menuIcon: '../images/hamburger.png', headerTopMenuClass: 'headerTopMenu' });
-				document.getElementsByTagName('html')[0].style.overflowY = 'auto';
+				document.getElementsByTagName('body')[0].style.overflowY = 'auto';
 				break;
 			default: break;
 		}
 	}
 
 	hideMenuWhenResizing() {
-		document.getElementsByTagName('html')[0].style.overflowY = 'auto';
+		document.getElementsByTagName('body')[0].style.overflowY = 'auto';
 		this.setState({ headerTopMenuClass: 'headerTopMenu' });
 
 	}
 
 	showMenuWhenResizing() {
 		this.setState({ headerTopMenuClass: 'headerTopMenuMobile' });
-		document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
+		document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
 	}
 
 	onStartDateChange (date, dateString) {
@@ -152,6 +152,41 @@ export default class HeaderComponent extends React.Component {
 					<div className="headerVideoImg">
 						<img className="playIcon" src="../images/playIcon.png" alt="play" />
 					</div>
+				</div>
+				<div className="headerBottom">
+					<div className="headerBottomTitle"><span>See </span> How It Works</div>
+					<div className="headerBottomContent">
+						<div className="headerBottomItem">
+							<img className="headerBottomIcon" src="../images/iconFind.png" alt="find" />
+							<div className="headerBottomItemText">
+								<div className="headerBottomItemTextTitle"><span>Find </span> what to do</div>
+								<div className="headerBottomItemTextDesc">
+									Lored khalem ipsum is a major key to success. The key is to drink coconut,
+									the fresh coconut, trust me. Celebrate success right, the only way.
+								</div>
+							</div>
+						</div>
+						<div className="headerBottomItem">
+							<img className="headerBottomIcon" src="../images/iconPay.png" alt="find" />
+							<div className="headerBottomItemText">
+								<div className="headerBottomItemTextTitle"><span>Choose </span>payment method</div>
+								<div className="headerBottomItemTextDesc">
+									After you choose to rent apartment, boat or just explore coast privately, choose
+									payment method and bezbrižno dođite i have fun.
+								</div>
+							</div>
+						</div>
+						<div className="headerBottomItem">
+							<img className="headerBottomIcon" src="../images/iconExp.png" alt="find" />
+							<div className="headerBottomItemText">
+								<div className="headerBottomItemTextTitle"><span>Experience </span>Croatia</div>
+								<div className="headerBottomItemTextDesc">
+									Go and have good time. Discover untouched nature, old castles, war or just have
+									fun with friends on a boat or a private excursion.
+								</div>
+							</div>
+						</div>
+					</div> 
 				</div>
 			</div>
 		);
