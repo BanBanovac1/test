@@ -1,0 +1,76 @@
+html {
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.boatCardAlign {
+    padding-top: 81.82px;
+    padding-left: 11.98%;
+    padding-bottom: 44.11px;
+}
+
+.bookTourAlign {
+    padding-top: 51.94px;
+    padding-left: 11.98%;
+    padding-bottom: 51.94px;
+
+     & > * {
+            display: inline-block;
+    }
+
+    .dealsElement {
+        float: right;
+        margin-right: 19.48%;
+        margin-top: 35px;
+
+        a {
+             & > * {
+                display: inline-block;
+                vertical-align: middle;
+             }
+
+            .dealsElementText {
+                font-family: 'Product Sans', Arial, sans-serif;
+                font-size: 10.69px;
+                letter-spacing: 1px;
+                color: #08b3e5;
+                margin-right: 33.44px;
+             }
+
+            .dealsElementIcon {
+                 width: 10.67px;
+            }
+        }
+
+        @media screen and(max-width: 1145px) {
+             margin-right: 5%;
+        }
+    }
+
+    @media screen and (max-width: 805px) {
+            & > * {
+                display: block;
+            }
+    }
+
+         @media screen and (max-width: 767px) {
+            padding-left: 1%;
+
+            & > * {
+                display: block;
+            }
+
+            @media screen and (max-width: 659px) {
+                padding-left: 0;
+                padding-right: initial;
+            }
+        }
+}

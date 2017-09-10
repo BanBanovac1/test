@@ -1,0 +1,603 @@
+.overlayPayment {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(12,56,69,.7);
+    padding-top: 99.6px;
+    display: none;
+
+    .paymentForm {
+        margin: auto;
+        width: 709.32px;
+        min-height: 1173.91px;
+        padding-top: 17.08px;
+        padding-bottom: 57.63px;
+        border-radius: 4px;
+        background-color: white;
+
+        .paymentClose {
+            width: 17.79px;
+            display: block;
+            margin-left: 667.34px;
+            margin-bottom: 18.5px;
+            cursor: pointer;
+        }
+
+        .paymentPersonalIcon {
+            width: 88.93px;
+            display: block;
+            margin: auto;
+            margin-bottom: 22.77px;
+        }
+
+        .paymentFirstTitle {
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 17.84px;
+            font-weight: bold;
+            color: #09c7ff;
+            text-align: center;
+            margin-bottom: 8.54px;
+        }
+
+        .paymentFirstSubtitle {
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 12.84px;
+            color: #60777e;
+            text-align: center;
+            margin-bottom: 34.15px;
+        }
+
+        hr {
+            height: 3px;
+            border: none;
+            background-color: #eceff1;
+            margin-bottom: 46.24px;
+        }
+
+        .paymentFirstRow1 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 22.06px;
+            padding-left: 10.03%;
+
+            .fullNameItem {
+                margin-right: 27.04px;
+
+                .fullNameLabel {
+                     font-family: 'Product Sans', Arial, sans-serif;
+                     font-size: 10.68px;
+                     color: #60777e;
+                     font-weight: bold;
+                     text-align: left;
+                     margin-bottom: 11.38px;
+                }
+
+                .fullNameInput {
+                    width: 269.64px;
+                    height: 35.57px;
+                    background-color: #eceff1;
+                    border-radius: 4px;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        background-color: transparent;
+                        border: none;
+                        padding-left: 19.21px;
+                    }
+                }
+            }
+
+            .emailItem {
+                .emailLabel {
+                     font-family: 'Product Sans', Arial, sans-serif;
+                     font-size: 10.68px;
+                     color: #60777e;
+                     font-weight: bold;
+                     text-align: left;
+                     margin-bottom: 11.38px;
+                }
+
+                .emailInput {
+                    width: 269.64px;
+                    height: 35.57px;
+                    background-color: #eceff1;
+                    border-radius: 4px;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        background-color: transparent;
+                        border: none;
+                        padding-left: 19.21px;
+                    }
+                }
+            }
+        }
+
+        .paymentFirstRow2 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 22.06px;
+            padding-left: 10.03%;
+
+             .addressItem {
+                margin-right: 27.04px;
+
+                .addressLabel {
+                     font-family: 'Product Sans', Arial, sans-serif;
+                     font-size: 10.68px;
+                     color: #60777e;
+                     font-weight: bold;
+                     text-align: left;
+                     margin-bottom: 11.38px;
+                }
+
+                .addressInput {
+                    width: 269.64px;
+                    height: 35.57px;
+                    background-color: #eceff1;
+                    border-radius: 4px;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        background-color: transparent;
+                        border: none;
+                        padding-left: 19.21px;
+                    }
+                }
+            }
+
+             .phoneItem {
+                .phoneLabel {
+                     font-family: 'Product Sans', Arial, sans-serif;
+                     font-size: 10.68px;
+                     color: #60777e;
+                     font-weight: bold;
+                     text-align: left;
+                     margin-bottom: 11.38px;
+                }
+
+                .phoneInput {
+                    width: 269.64px;
+                    height: 35.57px;
+                    background-color: #eceff1;
+                    border-radius: 4px;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        background-color: transparent;
+                        border: none;
+                        padding-left: 19.21px;
+                    }
+                }
+            }
+        }
+
+        .noteItem {
+            padding-left: 10.03%;
+            margin-bottom: 35.57px;
+
+            .noteLabel {
+                font-family: 'Product Sans', Arial, sans-serif;
+                font-size: 10.68px;
+                color: #60777e;
+                font-weight: bold;
+                text-align: left;
+                margin-bottom: 11.38px;
+            }
+
+            .noteInput {
+                width: 565.61px;
+                height: 82.53px;
+                background-color: #eceff1;
+                border-radius: 4px;
+
+                textarea {
+                    resize: none;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    border: none;
+                    padding-top: 12.81px;
+                    padding-left: 19.21px;
+                    padding-right: 19.21px;    
+                }
+            }
+        }
+
+        .paymentInfoIcon {
+            width: 91.77px;
+            margin: auto;
+            margin-bottom: 19.92px;
+            display: block;
+        }
+
+        .paymentSecondTitle {
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 17.84px;
+            font-weight: bold;
+            color: #09c7ff;
+            text-align: center;
+            margin-bottom: 8.54px;
+        }
+
+        .paymentSecondSubtitle {
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 12.84px;
+            color: #60777e;
+            text-align: center;
+            margin-bottom: 34.15px;
+        }
+
+        .paymentSelectTitle {
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 10.68px;
+            font-weight: bold;
+            color: #60777e;
+            margin-left: 10.03%;
+            margin-bottom: 26.32px;
+        }
+
+        .paymentPriceAlign {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-left: 10.03%;
+            margin-bottom: 39.13px;
+
+            .paymentPriceBoxSelected {
+                width: 103.87px;
+                border: 1px solid #09c7ff;
+                border-radius: 2px;
+                padding-left: 12.09px;
+                padding-bottom: 11.38px;
+                background-color: #cef4ff;
+                cursor: pointer;
+
+                &:first-child {
+                    margin-right: 19.21px;
+                }
+
+                .dot {
+                    border: 1px solid #09c7ff;
+                    width: 10.67px;
+                    height: 10.67px;
+                    border-radius: 100%;
+                    margin-top: 21.34px;
+                    margin-bottom: 10.67px;
+
+                    .innerDot {
+                        width: 4.98px;
+                        height: 4.98px;
+                        background-color: #09c7ff;
+                        border-radius: 100%;
+                        margin: auto;
+                        margin-top: 2px;
+                    }
+                }
+
+                .paymentPriceBoxPrice {
+                    font-family: 'Product Sans', Arial, sans-serif;
+                    font-size: 24.92px;
+                    font-weight: bold;
+                    color: #09c7ff;
+                    margin-bottom: 4.54px;
+
+                    span {
+                        font-size: 17px;
+                    }
+                }
+
+                .paymentPriceBoxText {
+                    font-family: 'Product Sans', Arial, sans-serif;
+                    font-size: 10.66px;
+                    color: #60777e;
+                }
+            }
+
+            .paymentPriceBoxNotSelected {
+                width: 103.87px;
+                border: 1px solid #c3e6f3;
+                border-radius: 2px;
+                padding-left: 12.09px;
+                padding-bottom: 11.38px;
+                cursor: pointer;
+
+                 &:first-child {
+                    margin-right: 19.21px;
+                }
+
+                 .dot {
+                    border: 1px solid #09c7ff;
+                    width: 10.67px;
+                    height: 10.67px;
+                    border-radius: 100%;
+                    margin-top: 21.34px;
+                    margin-bottom: 10.67px;
+
+                    .innerDot {
+                        display: none;
+                        width: 4.98px;
+                        height: 4.98px;
+                        background-color: #09c7ff;
+                        border-radius: 100%;
+                        margin: auto;
+                        margin-top: 2px;
+                    }
+                }
+
+                .paymentPriceBoxPrice {
+                    font-family: 'Product Sans', Arial, sans-serif;
+                    font-size: 24.92px;
+                    font-weight: bold;
+                    color: #09c7ff;
+                    margin-bottom: 4.54px;
+
+                    span {
+                        font-size: 17px;
+                    }
+                }
+
+                .paymentPriceBoxText {
+                    font-family: 'Product Sans', Arial, sans-serif;
+                    font-size: 10.66px;
+                    color: #60777e;
+                }
+            }
+        }
+
+        .paymentCardInfo {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-left: 10.03%;
+            margin-bottom: 38.42px;
+
+            & > *:not(:last-child) {
+                margin-right: 10.67px;
+            }
+
+            .cardNumberItem {
+                .cardNumberLabel {
+                    font-family: 'Product Sans', Arial, sans-serif;
+                    font-weight: bold;
+                    font-size: 10.66px;
+                    color: #60777e;
+                    margin-bottom: 11.38px;
+                }
+
+                .cardNumberInput {
+                    width: 216.28px;
+                    height: 35.57px;
+                    background-color: #eceff1;
+                    border-radius: 4px;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        background-color: transparent;
+                        border: none;
+                        padding-left: 13.52px;
+                    }
+
+                }
+            }
+
+            .dateItem {
+                .dateLabel {
+                    font-family: 'Product Sans', Arial, sans-serif;
+                    font-weight: bold;
+                    font-size: 10.66px;
+                    color: #60777e;
+                    margin-bottom: 11.38px;
+                }
+
+                .dateInput {
+                    position: relative;
+                   
+                    width: 84.86px;
+                    height: 35.57px;
+                    background-color: #eceff1;
+                    border-radius: 4px;
+
+                    .datePicker {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                    }
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        background-color: transparent;
+                        border: none;
+                        padding-left: 13.52px;
+                    }
+                }
+            }
+
+            .securityItem {
+                .securityLabel {
+                    font-family: 'Product Sans', Arial, sans-serif;
+                    font-weight: bold;
+                    font-size: 10.66px;
+                    color: #60777e;
+                    margin-bottom: 11.38px;
+                }
+
+                .securityInput {
+                    width: 113.83px;
+                    height: 35.57px;
+                    background-color: #eceff1;
+                    border-radius: 4px;
+
+                     input {
+                        width: 100%;
+                        height: 100%;
+                        background-color: transparent;
+                        border: none;
+                        padding-left: 13.52px;
+                    }
+                }
+            }
+        }
+
+        .paymentButton {
+            display: block;
+            width: 208.46px;
+            height: 35.57px;
+            border-radius: 4px;
+            padding-top: 10.81px;
+            margin: auto;
+            text-align: center;
+            background-color: #09c7ff;
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 12.09px;
+            color: white;
+        }
+
+        @media screen and (max-width: 719px) {
+            width: 100%;
+
+            .paymentClose {
+                margin-left: 90%;
+            }
+
+            .paymentFirstRow1 {
+                .fullNameItem {
+                    margin-bottom: 22.06px;
+                }
+            }
+
+            .paymentFirstRow2 {
+                .addressItem {
+                    margin-bottom: 22.06px;
+                }
+            }
+
+            .noteItem {
+                width: 95%;
+
+                .noteInput {
+                    width: 100%;
+                }
+            }
+
+            .paymentCardInfo {
+                .cardNumberItem {
+                    margin-bottom: 22.08px;
+                }
+            }
+
+            @media screen and (max-width: 323px) {
+                .paymentFirstRow1 {
+                    .fullNameItem {
+                        margin-right: 0;
+
+                        .fullNameInput {
+                            width: 150%;
+                        }
+                    }
+
+                     .emailItem {
+                         .emailInput {
+                            width: 150%;
+                         }
+                     }
+                }
+
+                .paymentFirstRow2 {
+                    .addressItem {
+                        margin-right: 0;
+
+                        .addressInput {
+                            width: 150%;
+                        }
+                    }
+
+                    .phoneItem {
+
+                        .phoneInput {
+                            width: 150%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .successForm {
+        width: 710.04px;
+        min-height: 528.61px;
+        background-color: white;
+        border-radius: 4px;
+        margin: auto;
+        padding-top: 17.08px;
+        padding-bottom: 65.45px;
+        display: none;
+
+        .successClose {
+            width: 17.79px;
+            display: block;
+            margin-left: 667.34px;
+            margin-bottom: 65.45px;
+            cursor: pointer;
+        }
+
+        .successIcon {
+            width: 197.79px;
+            display: block;
+            margin: auto;
+            margin-bottom: 54.78px;
+        }
+
+        .successTitle {
+             font-family: 'Product Sans', Arial, sans-serif;
+             font-weight: bold;
+             font-size: 17.84px;
+             color: #09c7ff;
+             text-align: center;
+        }
+
+        .successText {
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 12.84px;
+            color: #60777e;
+            text-align: center;
+            margin-bottom: 34.86px;
+        }
+
+        .successButton {
+            display: block;
+            width: 208.46px;
+            height: 35.57px;
+            border-radius: 4px;
+            padding-top: 10.81px;
+            margin: auto;
+            text-align: center;
+            background-color: #09c7ff;
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 12.09px;
+            color: white;
+        }
+
+        @media screen and (max-width: 719px) {
+            width: 100%;
+
+            .successClose {
+                margin-left: 90%;
+            }
+        }
+    }
+}

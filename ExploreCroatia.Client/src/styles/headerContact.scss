@@ -1,0 +1,137 @@
+.headerContact {
+    width: 100%;
+    background-image: url(../images/headerBackground1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-bottom: 98.89px;
+    text-align: center;   
+
+    .headerMain {
+       .headerMainTitle {
+           margin-bottom: 37px;
+
+           h2 {
+               font-family: 'Product Sans', Arial, sans-serif;
+               font-size: 27px;
+               color: white;
+
+               span {
+                   font-weight: bold;
+               }
+           }
+       }
+
+       .headerMainText {
+           font-family: 'MyriadProRegular', Arial, sans-serif;
+           font-size: 17.65px;
+           color: white;
+           margin-bottom: 19.21px;
+       }
+
+       .headerMainPhone {
+           font-family: 'Product Sans', Arial, sans-serif;
+           font-size: 38.82px;
+           color: white;
+           font-weight: bold;
+          
+       }
+    }
+    
+
+
+   /* @media screen and (min-width: 1680px) and (max-width: 2560px) {
+        .headerTop{
+            padding-top: $headerTopPadding / 1366px * 1920px;
+
+            .headerTopTitle {
+                h1 {
+                    font-size: $headerTopTitleFont / 1366px * 1920px;
+                }
+
+                &:after {
+                    height: 30px;
+                    top: 18px;
+                    right: 5px;
+                }
+            }
+
+            .headerTopPhone {
+                font-size: $headerTopPhoneFont / 1366px * 1920px;
+            }
+
+            .headerTopMenu {
+                li {
+                    font-size: $headerTopMenuFont / 1366px * 1920px;
+                }
+            }
+        }
+
+        .headerMain {
+            .headerMainTitle {
+                h2 {
+                    font-size: $headerMainTitleFont / 1366px * 1920px;
+                }
+            }
+
+            .headerMainText {
+                font-size: $headerMainTextFont / 1366px * 1920px;
+            }
+
+            .headerMainMenuList {
+                .headerMainMenuListItem {
+                     .headerMainMenuListItemText {
+                        font-size: $headerMainMenuListFont / 1366px * 1920px;
+                    }
+
+                    .boatIcon {
+                        width: $boatIconW / 1366px * 1920px;
+                    }
+
+                    .peopleIcon {
+                        width: $peopleIconW / 1366px * 1920px;
+                    }
+
+                    .dateIcon {
+                        width: $dateIconW / 1366px * 1920px;
+                    }
+
+                    .backIcon {
+                        width: $backIconW / 1366px * 1920px;
+                    }
+                }
+                   
+                .headerMainMenuListButton {
+                    font-size: $headerMainMenuButtonFont / 1366px * 1920px;
+                }
+            }
+        }
+
+        .headerVideo {
+            .headerVideoText {
+                font-size: $headerVideoFont / 1366px * 1920px;
+            }
+        }
+
+    }*/
+
+   /* @media screen and (max-width: 1233px) {
+        .headerTop {
+            .headerTopPhone {
+                margin-right: $headerPhoneMR / 1366px * 800px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1036px) {
+        .headerTop {
+            .headerTopPhone {
+                margin-right: $headerPhoneMR / 1366px * 600px;
+            }
+        }
+    }*/
+
+}
+
+      
+    

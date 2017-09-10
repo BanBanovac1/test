@@ -1,0 +1,126 @@
+.headerBoat {
+    position: relative;
+    width: 100%;
+    height: 609.17px;
+    box-sizing: border-box;
+    background-image: url(../images/headerBoatBackground.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;       
+
+    .headerMain {
+      .headerMainLeft {
+          float: left;
+          width: 394.15px;
+          margin-top: 263.56px;
+          margin-left: 11.98%;
+          text-align: left;
+
+          hr {
+              background-color: #09c7ff;
+              border: none;
+              margin-bottom: 22.77px;
+              height: 4px;
+              width: 38.42px;
+          }
+
+          .headerMainLeftBoatName {
+              margin-bottom: 9.25px;
+
+              h2 {
+                  font-family: 'Product Sans', Arial, sans-serif;
+                  font-size: 28.51px;
+                  color: white;
+                  font-weight: bold;
+              }
+          }
+
+          .headerMainLeftBoatAddress {
+              font-family: 'Product Sans', Arial, sans-serif;
+              font-size: 15.68px;
+              color: white;
+              margin-bottom: 28.46px;
+          }
+
+         /* .headerMainLeftGalleryButton {
+              font-family: 'Product Sans', Arial, sans-serif;
+              font-size: 15.68px;
+              color: white;
+              font-weight: bold;
+              cursor: pointer;
+              text-decoration: underline;
+          }*/
+
+          .gallery {
+              .galleryButton {
+                  font-family: 'Product Sans', Arial, sans-serif;
+                  font-size: 15.68px;
+                  font-weight: bold;
+                  color: white;
+                  cursor: pointer;
+                  text-decoration: underline;
+              }
+          }
+      }
+      .bookBoatCard {
+          display: block;
+          box-sizing: border-box;
+          width: 305.92px;
+          background-color: white;
+          float: right;
+          margin-right: 12.45%;
+
+          & > * {
+              text-align: left;
+          }
+
+          .bookBoatPeopleSelect {
+             text-align: left;
+          }
+      }
+    }
+
+   @media screen and (max-width: 949px) {
+       height: 700px;
+
+       .headerMain {
+           .headerMainLeft {
+               margin-left: 4%;
+              
+           }
+
+           .bookBoatCard {
+               margin-right: 2%;
+           }
+       }
+    }
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 370px;
+
+        .headerMain {
+
+            .headerMainLeft {
+                width: 90%;
+                margin-bottom: 50px;
+            }
+           
+            .bookBoatCard {
+                width: 100%;
+                margin-right: 0;
+
+                .bookBoatButton {
+                    width: 100%;
+                    margin-left: 0;
+                    padding-left: 0;
+                    padding-right: 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+      
+    
