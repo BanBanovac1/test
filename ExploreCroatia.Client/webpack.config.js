@@ -10,7 +10,7 @@ module.exports = {
         publicPath: '/app/'*/
         path: path.resolve(__dirname, 'src') + '/app/bundle',
         filename: 'bundle.js',
-		publicPath: '/bundle/'
+		/*publicPath: '/bundle/'*/
     },
     module: {
         loaders: [
